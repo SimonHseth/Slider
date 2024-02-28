@@ -2,13 +2,16 @@ import React, { useEffect ,useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import logo192 from "./logo192.png"
+import lawnMower from "./lawn-mower-2127637_1280.jpg"
 import axios from "axios";
-import ReactPlayer from "react-player";
+import VideoComponent from "./Youtube";
+import videoUrl from "./Youtube";
+import ReactPlayer from "./Youtube";
+import metadata from "./Youtube";
 
 
 
-function Fade() {
+function SimpleSlider() {
   var settings = {
     dots: true,
     fade: true,
@@ -52,33 +55,28 @@ function Fade() {
         console.log(response.data)
         setData(response.data)
         setName(response.data.name)
-        setBaseExpeperience(response.data.baseExperience)
+        setBaseExpeperience(response.data.baseExperience)       
       })
 
     
   }
   
-  URL="https://pokeapi.co/api/v2/pokemon/charmander"
-
-  if (!isMobile) {
-     
-  
-  }
+  URL="https://pokeapi.co/api/v2/pokemon/machamp"
 
   
 
   return (
-    <div class="slider_container">
+    
       <Slider {...settings}>
       
-        <div class="Slider_image">
+        <div>
           <div className="rounded-t-xl">
-            <img src={logo192} alt=""/>
+            <img src={lawnMower} alt=""/>
           </div>
         </div>
 
-        <div class="Pokemon">
-          <h1>Pokemon</h1>
+        <div>
+          
           <h2>{ name}</h2>
           <img src={data?data.sprites.other.dream_world.front_default:"<p>Loading<p>"} alt=""/>
           <h3>{ baseExperience}</h3>
@@ -86,13 +84,20 @@ function Fade() {
           <h1>{content}</h1>
         </div>
 
+        <div>
+        <VideoComponent videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
+        <ReactPlayer url={videoUrl} playing={true} controls={true} />
+        <h2>{metadata.title}</h2>
+        <p>{metadata.description}</p>
+        </div>
+
         
 
     </Slider>
-    </div>
+    
   );
 }
 
 
 console.log(Slider)
-export default Fade;
+export default SimpleSlider;

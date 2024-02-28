@@ -23,10 +23,9 @@ code {
 
 .Slider_image {
   display: flex;
-  
+  margin: auto;
   align-items: center;
   justify-content: center;
-  background-color: rgb(171, 171, 255);
   text-align: center;
   font-size:2rem ;
   
