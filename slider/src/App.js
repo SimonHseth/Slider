@@ -18,7 +18,7 @@ function Responsive() {
     fade: true,
     infinite: true,
     speed: 100,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     lazyload: true,
     initialSlide: 2,
@@ -56,8 +56,13 @@ function Responsive() {
         console.log(response.data)
         setData(response.data)
         setName(response.data.name)
-        setBaseExpeperience(response.data.baseExperience)       
       })
+
+      .catch((error) => {
+        console.error('Feil under Axios-forespørsel:', error);
+      });
+    
+      
 
     
   }
@@ -70,17 +75,19 @@ function Responsive() {
     
       <Slider {...settings}>
         
-          <div class="">
-            <img src={horse_450} alt="bildet ar tatt av Timur Romanov, Unsplash"/>
+          <div >
+            <img src={horse_450} alt="bildet er tatt av Timur Romanov, Unsplash"/>
+            <h2>bildet er tatt av Timur Romanov, Unsplash</h2>
           </div>
 
-        <div class="">
+        <div >
           
           <img src={data?data.sprites.other.dream_world.front_default:"<p>Loading<p>"} alt=""/>
           <h2>{ name}</h2>
+          <h1>{content}</h1>
         </div>
 
-        <div class="">
+        <div className="video-wrapper">
         <VideoComponent videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
         <ReactPlayer url={videoUrl} playing={true} controls={true} />
         <h2>{metadata.title}</h2>

@@ -38,7 +38,7 @@ const VideoComponent = ({ videoUrl }) => {
   }, [videoUrl]);
 
   return (
-    <div className='w- 10vh, '>
+    <div>
       <ReactPlayer url={videoUrl} playing={play} controls={true} muted={true} />
       <h2>{metadata.title}</h2>
       <p>{metadata.description}</p>
