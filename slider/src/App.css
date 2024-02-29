@@ -1,47 +1,29 @@
-.App {
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
+
+.slick-slide img {
+  width: 100vw;
+  height: 60vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.slick-slide > div {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 1300px; 
+}
+
+
+.slick-slide video, .slick-slide .content-wrapper {
+  display: flex;
+  margin: auto;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 768px) {
+  .slick-slide > div {
+    height: auto; 
   }
 }
-
-.Pokemon {
-  text-align: center;
-  
-}
-

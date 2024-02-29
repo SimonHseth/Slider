@@ -2,28 +2,29 @@ import React, { useEffect ,useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import lawnMower from "./lawn-mower-2127637_1280.jpg"
+import horse_450 from "./horse_540.jpg"
 import axios from "axios";
 import VideoComponent from "./Youtube";
 import videoUrl from "./Youtube";
 import ReactPlayer from "./Youtube";
 import metadata from "./Youtube";
+import "./App.css"
 
 
-
-function SimpleSlider() {
+function Responsive() {
   var settings = {
     dots: true,
+    centerMode: true,
     fade: true,
     infinite: true,
     speed: 100,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     lazyload: true,
-    initialSlide: 1,
+    initialSlide: 2,
     responsive: [
       {
-        breakpoint: 300,
+        breakpoint: 10,
 
       }
     ]
@@ -68,28 +69,27 @@ function SimpleSlider() {
   return (
     
       <Slider {...settings}>
-      
-        <div>
-          <div className="rounded-t-xl">
-            <img src={lawnMower} alt=""/>
+        
+          <div class="">
+            <img src={horse_450} alt="bildet ar tatt av Timur Romanov, Unsplash"/>
           </div>
-        </div>
 
-        <div>
+        <div class="">
           
-          <h2>{ name}</h2>
           <img src={data?data.sprites.other.dream_world.front_default:"<p>Loading<p>"} alt=""/>
-          <h3>{ baseExperience}</h3>
-
-          <h1>{content}</h1>
+          <h2>{ name}</h2>
         </div>
 
-        <div>
+        <div class="">
         <VideoComponent videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
         <ReactPlayer url={videoUrl} playing={true} controls={true} />
         <h2>{metadata.title}</h2>
         <p>{metadata.description}</p>
         </div>
+
+
+        
+      
 
         
 
@@ -100,4 +100,4 @@ function SimpleSlider() {
 
 
 console.log(Slider)
-export default SimpleSlider;
+export default Responsive;
