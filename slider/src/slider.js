@@ -74,7 +74,7 @@ function Responsive() {
         
         <div >
           <img src={horse_450} alt="bildet er tatt av Timur Romanov, Unsplash"/>
-          <h2>bildet er tatt av Timur Romanov, Unsplash</h2>
+          <h2>Foto: Timur Romanov, Unsplash.Com</h2>
         </div>
 
       <div >
