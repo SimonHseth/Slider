@@ -4,6 +4,10 @@
 
 @layer base {
   body {
-    background-color: #282828;
+    background-color: #272731;
   }
+}
+
+.h2 {
+  font-size: large;
 }

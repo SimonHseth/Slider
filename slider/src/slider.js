@@ -36,10 +36,7 @@ function Responsive() {
   
   const [data, setData] = useState();
   const [name, setName] = useState();
-  const [baseExperience, setBaseExpeperience] = useState();
   
-  
-
   
 
   if (isMobile) {
@@ -72,35 +69,34 @@ function Responsive() {
   
 
   return (
-    
+    <div class="Slider_container">
       <Slider {...settings}>
         
-          <div >
-            <img src={horse_450} alt="bildet er tatt av Timur Romanov, Unsplash"/>
-            <h2>bildet er tatt av Timur Romanov, Unsplash</h2>
-          </div>
-
         <div >
-          
-          <img src={data?data.sprites.other.dream_world.front_default:"<p>Loading<p>"} alt=""/>
-          <h2>{ name}</h2>
-          <h1>{content}</h1>
+          <img src={horse_450} alt="bildet er tatt av Timur Romanov, Unsplash"/>
+          <h2>bildet er tatt av Timur Romanov, Unsplash</h2>
         </div>
 
-        <div className="video-wrapper">
-        <VideoComponent videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
-        <ReactPlayer url={videoUrl} playing={true} controls={true} />
-        <h2>{metadata.title}</h2>
-        <p>{metadata.description}</p>
-        </div>
-
-
+      <div >
         
+        <img src={data?data.sprites.other.dream_world.front_default:"<p>Loading<p>"} alt="<h2>{ name}</h2>"/>
+        <h2>{ name}</h2>
+        <h1>{content}</h1>
+      </div>
+
+      <div className="video-wrapper">
+      <VideoComponent videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
+      <ReactPlayer url={videoUrl} playing={true} controls={true} />
+      <h2>{metadata.title}</h2>
+      <p>{metadata.description}</p>
+      </div>
+
+      </Slider>
+
+    </div>
       
 
-        
-
-    </Slider>
+    
     
   );
 }
